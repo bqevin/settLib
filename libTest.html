@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<title>Sandbox | kevin_andeLib.js</title>
+	<script src='js/kevin_andeLib.js' type="text/javascript"></script>
+	<script type="text/javascript">
+		
+	</script>
+	<style type="text/css">
+	@font-face{
+		src:url("css/roboto/Roboto-Regular.ttf");
+		font-family: Roboto;
+		}
+	@font-face{
+		src:url("css/lato/Lato-Regular.ttf");
+		font-family: Lato;
+		}
+	body{
+		margin: 0px; padding: 0px;
+	}
+	div#clearfix{
+		clear: both;
+	}
+	div#container{
+		padding: 100px;
+		background: #959A9B;
+	}
+	div#check{
+		//height: 300px;
+		background: #E4E4E4 ;
+		float: left;
+		width: 450px;
+	}
+	div#holder{
+		font-size: 31px;
+		color: #FFF;
+		font-family: lato;
+		float: left;
+		margin-left: 20px;
+		padding: 30px;
+		text-align: center;
+		height: 200px;
+		background: #A7C3AF;
+	}
+	input{
+		width: 300px;
+		border: 1px solid #A5A5A5;
+		line-height: 45px;
+		font-size: 20px;
+		line-height: 40px;
+		border-radius: 5px;
+	}
+	h3{
+		padding-bottom: 20px;
+		margin: 0px;
+	}
+	 input[type="submit"]{
+	 	background: #B9EAF0;
+	 	padding: 10px;
+	 	font-weight: bold;
+		font-size: 20px;
+		margin-top: 20px;
+	 }
+	 li{
+	 	padding: 10px;
+		list-style: none;
+		font-family: Roboto;
+	 }
+	 div#more{
+	 	text-align: center;
+		font-family: roboto;
+		color: #D1C7B3;
+	 }
+
+	</style>
+</head>
+<body>
+<div id="container">
+<div id="check">
+	<ul>
+		<li>Equality : </li>
+		<li>Subset : </li>
+		<li>Empty : </li>
+		<li>Compliments: </li>
+		<li>Universal : </li>
+		<li>Explicit : </li>
+		<li>Implicit : </li>
+		<li>Union: </li>
+		<li>Intersection : </li>
+		<li>Relation : </li>
+	</ul>
+</div>
+<div id="holder">
+	<h3>Enter the sets to compare</h3>
+	<input type = "text" placeholder = "Set A">
+	<input type = "text" placeholder = "Set B"><br>
+	<input type="submit" value="Evaluate">
+</div>
+</div>
+<div id="clearfix"></div>
+<div id="more">
+	<p>SettLib.All rights reserved &copy; 2015</p>
+</div>
+
+</body>
+</html>

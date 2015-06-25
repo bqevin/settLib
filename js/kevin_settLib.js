@@ -1,4 +1,4 @@
-function Set(){
+Set = function (){
 	this.setStore = [];
 	this.add = add;
 	this.remove = remove;
@@ -11,7 +11,7 @@ function Set(){
 	this.contains = contains;
 }
 
-function add(data){
+Set.prototype.add = function (data) {
 	if(this.setStore.indexOf(data)<0){
 		this.setStore.push(data);
 		return true;
@@ -19,7 +19,7 @@ function add(data){
 	return false;
 }
 
-function remove(data){
+Set.prototype.remove = function (data){
 	var pos = this.setStore.indexOf(data);
 	if(pos > -1){
 		this.setStore.splice(pos,1);
@@ -28,20 +28,20 @@ function remove(data){
 	return false;
 }
 
-function show(){
+Set.prototype.show = function (){
 	return this.setStore;
 }
 
-function contains(data){
+Set.prototype.contains = function (data){
 	if(this.setStore.indexOf(data) > -1){
 		return true;
 	}
 	return false;
 }
 
-function union(set){
+Set.prototype.union = function (set) {
 	var tempSet = new Set();
-	for(var i=0; i<this.setStore.length; ++i){
+	for(var i=0; i<this.setStore.length; ++i) {
 		tempSet.add(this.setStore[i]);
 	}
 	for(var i=0; i<set.setStore.length; ++i){
@@ -55,7 +55,7 @@ function union(set){
 	return tempSet;
 }
 
-function intersect(set){
+Set.prototype.intersect = function (set) {
 	var tempSet = new Set();
 	for(var i=0; i<this.setStore.length; ++i){
 		if(set.contains(this.setStore[i])){
@@ -65,11 +65,11 @@ function intersect(set){
 	return tempSet;
 }
 
-function difference(){
+Set.prototype.difference = function () {
 
 }
 
-function subset(set){
+Set.prototype.subset = function (set) {
 	if(this.size() > set.size()){
 		return false;
 	}
@@ -84,11 +84,11 @@ function subset(set){
 	return true;
 }
 
-function size(){
+Set.prototype.size = function (){
 	return this.setStore.length;
 }
 
-function print(a, b){
+Set.prototype.print  = function (a, b){
     console.log(a,b);
 }
 //Use

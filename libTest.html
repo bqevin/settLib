@@ -6,9 +6,11 @@
 	<script src='js/kevin_settLib.js' type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
+	<body>
+	<div id="container">	
+	</div>
 	<script type="text/javascript">
-	document.write('<body>');
-		var setA = new Set();
+	/*var setA = new Set();
 		var inA = document.getElementById('setA').value;
 		var newA = inA.split(",");	
 		for (var i = 0; i < newA.length; i++) {
@@ -44,40 +46,34 @@
 			//logging values of B into created array
 			arrB.push(setB[i]);
 			//console.log(arrA);
-		
-	 document.write(
-		   '
-			<div id="container">
-			<div id="check">
-				<h3 id="setAd"></h3>
-				<h3 id="setBd"></h3>
-				<ul>
-					<li id="equality">Equality : </li>
-					<li id="subset">Subset : </li>
-					<li id="emptiness">Empty : </li>
-					<li id="compliments">Compliments: </li>
-					<li id="universality">Universal : </li>
-					<li id="explicity">Explicit : </li>
-					<li id="implicity">Implicit : </li>
-					<li id="unity">Union (A U B): </li>
-					<li id="intersection">Intersection (A n B) : </li>
-					<li id="relation">Relation : </li>
-				</ul>
-			</div>
-			<div id="holder">
-			<h3>Enter the sets to compare</h3>
-			<input type = "text"  id = "setA" placeholder = "Set A">
-			<input type = "text"  id = "setB" placeholder = "Set B"><br>
-			<input type="submit" value="Evaluate" onclick="displayEvaluation()">
-			</div>
-			<br>
-			</div>
-			<div id="clearfix"></div>
-			<div id="more">
-				<p>SettLib.All rights reserved &copy; 2015</p>
-			</div>
-			'
-			);
+		*/
+	 document.getElementById('container').innerHTML = '<div id="check">'+
+				'<h3 id="setAd"></h3>'+
+				'<h3 id="setBd"></h3>'+
+				'<ul>'+
+					'<li id="equality">Equality : </li>'+
+					'<li id="subset">Subset : </li>'+
+					'<li id="emptiness">Empty : </li>'+
+					'<li id="compliments">Compliments: </li>'+
+					'<li id="universality">Universal : </li>'+
+					'<li id="explicity">Explicit : </li>'+
+					'<li id="implicity">Implicit : </li>'+
+					'<li id="unity">Union (A U B): </li>'+
+					'<li id="intersection">Intersection (A n B) : </li>'+
+					'<li id="relation">Relation : </li>'+
+				'</ul>'+
+			'</div>'+
+			'<div id="holder">'+
+			'<h3>Enter the sets to compare</h3>'+
+			'<input type = "text"  id = "setA" placeholder = "Set A">'+
+			'<input type = "text"  id = "setB" placeholder = "Set B"><br>'+
+			'<input type="submit" value="Evaluate" onclick="displayEvaluation()">'+
+			'</div>'+
+			'<br>'+
+			'<div id="clearfix"></div>'+
+			'<div id="more">'+
+				'<p>SettLib.All rights reserved &copy; 2015</p>'+
+			'</div>';
 		/*document.getElementById('equality').innerHTML="Equality : ";
 		document.getElementById('subset').innerHTML="Subset : ";
 		document.getElementById('emptiness').innerHTML="Empty : ";
@@ -91,6 +87,5 @@
 	}
 	*/
 	</script>
-
 </body>
 </html>

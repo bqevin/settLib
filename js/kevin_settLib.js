@@ -1,14 +1,14 @@
-Set = function (){
+var Set = function (){
 	this.setStore = [];
-	this.add = add;
-	this.remove = remove;
-	this.size = size;
-	this.union = union;
-	this.intersect = intersect;
-	this.subset = subset;
-	this.difference = difference;
-	this.show = show;
-	this.contains = contains;
+// 	this.add = add;
+// 	this.remove = remove;
+// 	this.size = size;
+// 	this.union = union;
+// 	this.intersect = intersect;
+// 	this.subset = subset;
+// 	this.difference = difference;
+// 	this.show = show;
+// 	this.contains = contains;
 }
 
 Set.prototype.add = function (data) {
@@ -88,10 +88,10 @@ Set.prototype.size = function (){
 	return this.setStore.length;
 }
 
-Set.prototype.print  = function (a, b){
+var print  = function (a, b){
     console.log(a,b);
 }
-//Use
+
 
 var setA = new Set();
 setA.add("David");

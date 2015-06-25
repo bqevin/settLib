@@ -75,7 +75,7 @@ function subset(set){
 	}
 	else{
 		//can use for instead too
-		for each(var member in this.setStore){ 
+		for(var member in this.setStore){ 
 			if(!set.contains(member)){
 				return false;
 			}
@@ -88,27 +88,31 @@ function size(){
 	return this.setStore.length;
 }
 
+function print(a, b){
+    console.log(a,b);
+}
 //Use
 
-var names = new Set();
-names.add("David");
-names.add("James");
-names.add("Jane");
-names.add("David");
+var setA = new Set();
+setA.add("David");
+setA.add("James");
+setA.add("Jane");
+setA.add("David");
 
-print("names: ", names.show());
+print("names: ", setA.show());
 
-var names2 = new Set();
-names2.add("David");
-names2.add("Anthony");
-names2.add("Ben");
-names2.add("James");
-names2.add("Jane");
+var setB = new Set();
+setB.add("David");
+setB.add("Anthony");
+setB.add("Ben");
+setB.add("James");
+setB.add("Jane");
 
-print("names2: ", names2.show());
+print("setB: ", setB.show());
 
-print("names U names2: ", names.union(names2).show());
+print("setA U setB: ", setA.union(setB).show());
 
-print("names x names2: ", names.intersect(names2).show());
+print("setA x setB: ", setA.intersect(setB).show());
 
-print("is names subset of names2? : ", names.subset(names2));
+print("is setA subset of setB? : ", setA.subset(setB));
+

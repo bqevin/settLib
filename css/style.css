@@ -1,0 +1,70 @@
+@font-face{
+		src:url("roboto/Roboto-Regular.ttf");
+		font-family: Roboto;
+		}
+	@font-face{
+		src:url("lato/Lato-Regular.ttf");
+		font-family: Lato;
+		}
+	body{
+		margin: 0px; padding: 0px;
+	}
+	div#clearfix{
+		clear: both;
+	}
+	div#container{
+		padding: 100px;
+		background: #959A9B;
+	}
+	div#check{
+		//height: 300px;
+		background: #E4E4E4 ;
+		float: left;
+		width: 450px;
+	}
+	div#holder{
+		font-size: 31px;
+		color: #FFF;
+		font-family: lato;
+		float: left;
+		margin-left: 20px;
+		padding: 30px;
+		text-align: center;
+		height: 200px;
+		background: #A7C3AF;
+	}
+	input{
+		width: 300px;
+		border: 1px solid #A5A5A5;
+		line-height: 45px;
+		font-size: 20px;
+		line-height: 40px;
+		border-radius: 5px;
+	}
+	#check > h3{
+		padding: 10px;
+	    font-family: Lato;
+	    color: #9C2F2F;
+
+	}
+	h3{
+		padding-bottom: 20px;
+		margin: 0px;
+	}
+	 input[type="submit"]{
+	 	background: #B9EAF0;
+	 	padding: 10px;
+	 	font-weight: bold;
+		font-size: 20px;
+		margin-top: 20px;
+	 }
+	 li{
+	 	padding: 10px;
+		list-style: none;
+		font-family: Roboto;
+	 }
+	 div#more{
+	 	text-align: center;
+		font-family: roboto;
+		color: #D1C7B3;
+	 }

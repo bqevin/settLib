@@ -1,4 +1,4 @@
-@font-face{
+	@font-face{
 		src:url("roboto/Roboto-Regular.ttf");
 		font-family: Roboto;
 		}
@@ -51,7 +51,11 @@
 		padding-bottom: 20px;
 		margin: 0px;
 	}
-	 input[type="submit"]{
+	span{
+		font-weight: bold;
+		color: #952727;
+	}
+	 input[type="submit"], input[type="reset"]{
 	 	background: #B9EAF0;
 	 	padding: 10px;
 	 	font-weight: bold;

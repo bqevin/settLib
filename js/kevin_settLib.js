@@ -88,31 +88,59 @@ Set.prototype.size = function (){
 	return this.setStore.length;
 }
 
-var print  = function (a, b){
-    console.log(a,b);
+Set.prototype.isEmpty = function (){
+	if (this.setStore.length < 0) {
+	return true;	
+	}else{
+	return false;	
+	};
+	
 }
 
+Set.prototype.equals = function (array) {
+    // if the other array is a falsy value, return
+    if (!array)
+        return false;
 
-var setA = new Set();
-setA.add("David");
-setA.add("James");
-setA.add("Jane");
-setA.add("David");
+    // compare lengths - can save a lot of time 
+    if (this.length != array.length)
+        return false;
 
-print("names: ", setA.show());
+    for (var i = 0, l=this.length; i < l; i++) {
+        // Check if we have nested arrays
+        if (this[i] instanceof Array && array[i] instanceof Array) {
+            // recurse into the nested arrays
+            if (!this[i].equals(array[i]))
+                return false;       
+        }           
+        else if (this[i] != array[i]) { 
+            // Warning - two different object instances will never be equal: {x:20} != {x:20}
+            return false;   
+        }           
+    }       
+    return true;
+}   
 
-var setB = new Set();
-setB.add("David");
-setB.add("Anthony");
-setB.add("Ben");
-setB.add("James");
-setB.add("Jane");
+// var setA = new Set();
+// setA.add("David");
+// setA.add("James");
+// setA.add("Jane");
+// setA.add("David");
 
-print("setB: ", setB.show());
+// print("names: ", setA.show());
 
-print("setA U setB: ", setA.union(setB).show());
+// var setB = new Set();
+// setB.add("David");
+// setB.add("Anthony");
+// setB.add("Ben");
+// setB.add("James");
+// setB.add("Jane");
 
-print("setA x setB: ", setA.intersect(setB).show());
+// print("setB: ", setB.show());
 
-print("is setA subset of setB? : ", setA.subset(setB));
+// print("setA U setB: ", setA.union(setB).show());
+
+// print("setA x setB: ", setA.intersect(setB).show());
+
+// print("is setA subset of setB? : ", setA.subset(setB));
 

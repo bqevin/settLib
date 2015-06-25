@@ -7,85 +7,36 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
-	<div id="container">	
+	<div id="container">
+		<div id="check">
+			<h3 id="setAd"> Set A: { <span></span>} </h3>
+			<h3 id="setBd"> Set B: { <span></span>} </h3>
+			<ul>
+				<li id="eq">Equality : <span></span> </li>
+				<li id="ss">Subset : <span></span></li>
+				<li id="em">Empty : <span></span></li>
+				<li id="cm">Compliments: <span></span></li>
+				<li id="un">Universal : <span></span></li>
+				<li id="ex">Explicit : <span></span></li>
+				<li id="im">Implicit : <span></span></li>
+				<li id="un">Union (A U B): <span></span></li>
+				<li id="in">Intersection (A n B) : <span></span></li>
+				<li id="rl">Relation : <span></span></li>
+			</ul>
+		</div>
+		<div id="holder">
+			<h3>Enter the sets to compare</h3>
+			<form>
+			<input type="text" id="setA" placeholder="Set A">
+			<input type="text" id="setB" placeholder="Set B"><br>
+			<input type="submit" value="Evaluate"> <input type="reset" value="Clear">
+			</form>
+		</div>
+		<div id="clearfix"></div>
+		<div id="more"><p>SettLib.All rights reserved © 2015</p></div>
 	</div>
-	<script type="text/javascript">
-	/*var setA = new Set();
-		var inA = document.getElementById('setA').value;
-		var newA = inA.split(",");	
-		for (var i = 0; i < newA.length; i++) {
-			//logging values of A into created array
-			setA.add(newA[i]);
-			return setA;
-		}
-		
-		var setB = new Set();
-		var inB = document.getElementById('setB').value;
-		var newB = inB.split(",");	
-		for (var i = 0; i < newB.length; i++) {
-			//logging values of B into created array
-			setB.add(newB[i]);
-			return setB;
-		}
-		document.getElementById('setAd').innerHTML="Set A = { "+setA.show()+" }";
-		document.getElementById('setBd').innerHTML="Set B = { "+setB.show()+" }";
-
-		//Evaluation Start
-		var setA = document.getElementById('setA').value;	
-		var setB = document.getElementById('setB').value;
-		setA = setA.split(",");
-		setB = setB.split(",");
-		var arrA = [];
-		var arrB = [];
-		for (var i = 0; i < setA.length; i++) {
-			//logging values of A into created array
-			arrA.push(setA[i]);
-			//console.log(arrA);
-		};
-		for (var i = 0; i < setB.length; i++) {
-			//logging values of B into created array
-			arrB.push(setB[i]);
-			//console.log(arrA);
-		*/
-	 document.getElementById('container').innerHTML = '<div id="check">'+
-				'<h3 id="setAd"></h3>'+
-				'<h3 id="setBd"></h3>'+
-				'<ul>'+
-					'<li id="equality">Equality : </li>'+
-					'<li id="subset">Subset : </li>'+
-					'<li id="emptiness">Empty : </li>'+
-					'<li id="compliments">Compliments: </li>'+
-					'<li id="universality">Universal : </li>'+
-					'<li id="explicity">Explicit : </li>'+
-					'<li id="implicity">Implicit : </li>'+
-					'<li id="unity">Union (A U B): </li>'+
-					'<li id="intersection">Intersection (A n B) : </li>'+
-					'<li id="relation">Relation : </li>'+
-				'</ul>'+
-			'</div>'+
-			'<div id="holder">'+
-			'<h3>Enter the sets to compare</h3>'+
-			'<input type = "text"  id = "setA" placeholder = "Set A">'+
-			'<input type = "text"  id = "setB" placeholder = "Set B"><br>'+
-			'<input type="submit" value="Evaluate" onclick="displayEvaluation()">'+
-			'</div>'+
-			'<br>'+
-			'<div id="clearfix"></div>'+
-			'<div id="more">'+
-				'<p>SettLib.All rights reserved &copy; 2015</p>'+
-			'</div>';
-		/*document.getElementById('equality').innerHTML="Equality : ";
-		document.getElementById('subset').innerHTML="Subset : ";
-		document.getElementById('emptiness').innerHTML="Empty : ";
-		document.getElementById('compliments').innerHTML="Compliments : ";
-		document.getElementById('universality').innerHTML="Universal : ";
-		document.getElementById('explicity').innerHTML="Explicit : ";
-		document.getElementById('implicity').innerHTML="Implicit : ";
-		document.getElementById('unity').innerHTML="Union (A U B): "+ arrA.union(arrB).show();
-		document.getElementById('intersection').innerHTML="Intersection (A n B): ";
-		document.getElementById('relation').innerHTML="Relation : ";
-	}
-	*/
-	</script>
+	
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

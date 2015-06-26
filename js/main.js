@@ -28,7 +28,7 @@ $("input[type=submit]").click(function() {
 
 	
 	$("#eq span").text(true);
-	$("#ss span").text(setB.subset(setA).toString());
+	$("#ss span").text(setA.subset(setB).toString());
 	$("#em span").text(true);
 	$("#cm span").text(setB.compliment(setA).toString());
 	$("#uni span").text(false);

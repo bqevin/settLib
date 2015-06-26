@@ -50,7 +50,7 @@ Set.prototype.compliment = function (set) {
   for(var i = 0; i < this.setStore.length; i++){
 	  for(var k = 0; k < set.setStore.length; k++){
     if(this.setStore[i] != set.setStore[k]){
-      tempSet.push(this.setStore[i]);
+      tempSet.push(set.setStore[i]);
       break;
 	    }
 	  }

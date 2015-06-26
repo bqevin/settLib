@@ -46,29 +46,29 @@ Set.prototype.union = function (set) {
 }
 
 Set.prototype.compliment = function (set) {
-	var tempSet = new Set();
-	for(var i=0; i<this.setStore.length; ++i) {
-		tempSet.add(this.setStore[i]);
-	}
-	for(var i=0; i<set.setStore.length; ++i){
-		if(tempSet.contains(set.setStore[i])){
-			tempSet.setStore.push(set.setStore[i]);
-		}
-	}
-	return tempSet.show();
+	var tempSet = [];
+  for(var i = 0; i < this.setStore.length; i++){
+	  for(var k = 0; k < set.setStore.length; k++){
+    if(this.setStore[i] != set.setStore[k]){
+      tempSet.push(this.setStore[i]);
+      break;
+	    }
+	  }
+  }
+  return tempSet;
 }
 
 Set.prototype.intersect = function (set) {
-  var temp = [];
+  var tempSet = [];
     for(var i = 0; i < this.setStore.length; i++){
         for(var k = 0; k < set.setStore.length; k++){
             if(this.setStore[i] == set.setStore[k]){
-                temp.push(this.setStore[i]);
+                tempSet.push(this.setStore[i]);
                 break;
             }
         }
     }
-    return temp;
+    return tempSet;
 }
 
 Set.prototype.subset = function (set) {

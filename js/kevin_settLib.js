@@ -1,18 +1,18 @@
 var Set = function (){
 	this.setStore = [];
-// 	this.add = add;
-// 	this.remove = remove;
-// 	this.size = size;
-// 	this.union = union;
-// 	this.intersect = intersect;
-// 	this.subset = subset;
-// 	this.difference = difference;
-// 	this.show = show;
-// 	this.contains = contains;
+	// this.add = add;
+	// this.remove = remove;
+	// this.size = size;
+	// this.union = union;
+	// this.intersect = intersect;
+	// this.subset = subset;
+	// this.difference = difference;
+	// this.show = show;
+	// this.contains = contains;
 }
 
 Set.prototype.add = function (data) {
-	if(this.setStore.indexOf(data)<0){
+	if(this.setStore.indexOf(data)< 0){
 		this.setStore.push(data);
 		return true;
 	}
@@ -45,28 +45,40 @@ Set.prototype.union = function (set) {
 		tempSet.add(this.setStore[i]);
 	}
 	for(var i=0; i<set.setStore.length; ++i){
-		// if(!tempSet.contains(set.setStore[i])){
-		// 	tempSet.setStore.push(set.setStore[i]);
-		// }
+		if(!tempSet.contains(set.setStore[i])){
+			tempSet.setStore.push(set.setStore[i]);
+		}
 
 		//simpler way >
-		tempSet.add(set.setStore[i]);
+		//tempSet.add(set.setStore[i]);
 	}
-	return tempSet;
+	return tempSet.show();
 }
 
 Set.prototype.intersect = function (set) {
 	var tempSet = new Set();
-	for(var i=0; i<this.setStore.length; ++i){
-		if(set.contains(this.setStore[i])){
-			tempSet.add(this.setStore[i]);
+	for(var i=0; i<this.setStore.length; ++i) {
+		tempSet.add(this.setStore[i]);
+	}
+	for(var i=0; i<set.setStore.length; ++i){
+		if(tempSet.contains(set.setStore[i])){
+			tempSet.setStore.push(set.setStore[i]);
 		}
 	}
-	return tempSet;
+	return tempSet.show();
 }
 
-Set.prototype.difference = function () {
-
+Set.prototype.compliment = function (set) {
+	var tempSet = new Set();
+	for(var i=0; i < this.setStore.length; ++i) {
+		tempSet.add(this.setStore[i]);
+	}
+	for(var i=0; i<set.setStore.length; ++i){
+		if(tempSet.contains(set.setStore[i])){
+			tempSet.setStore.unshift(set.setStore[i]);
+		}
+	}
+	return tempSet.show();
 }
 
 Set.prototype.subset = function (set) {
@@ -74,7 +86,6 @@ Set.prototype.subset = function (set) {
 		return false;
 	}
 	else{
-		//can use for instead too
 		for(var member in this.setStore){ 
 			if(!set.contains(member)){
 				return false;
@@ -90,30 +101,29 @@ Set.prototype.size = function (){
 
 Set.prototype.isEmpty = function (){
 	if (this.setStore.length < 0) {
-	return true;	
-	}else{
-	return false;	
-	};
+	return true;
+	}
+	return false;
 	
 }
 
-Set.prototype.equals = function (array) {
-    // if the other array is a falsy value, return
-    if (!array)
+Set.prototype.equals = function (set) {
+    // if the other set is a falsy value, return
+    if (!set)
         return false;
 
     // compare lengths - can save a lot of time 
-    if (this.length != array.length)
+    if (this.length != set.length)
         return false;
 
     for (var i = 0, l=this.length; i < l; i++) {
         // Check if we have nested arrays
-        if (this[i] instanceof Array && array[i] instanceof Array) {
+        if (this[i] instanceof Array && set[i] instanceof Array) {
             // recurse into the nested arrays
-            if (!this[i].equals(array[i]))
+            if (!this[i].equals(set[i]))
                 return false;       
         }           
-        else if (this[i] != array[i]) { 
+        else if (this[i] != set[i]) { 
             // Warning - two different object instances will never be equal: {x:20} != {x:20}
             return false;   
         }           

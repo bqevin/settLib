@@ -25,24 +25,18 @@ $("input[type=submit]").click(function() {
 
 	$("#setAd span").text(setA.show().toString());
 	$("#setBd span").text(setB.show().toString());
-	if (setA.equals(setB) === true) {
-		$("#eq span").text("True");
-	}else{
-		$("#eq span").text("False");
-	};
-	$("#ss span").text(setB.show().toString());
-	if (setA.isEmpty() && setB.isEmpty()) {
-		$("#em span").text("True");
-	}else{
-		$("#em span").text("True");
-	};
-	$("#cm span").text(setB.show().toString());
-	$("#un span").text(setB.show().toString());
-	$("#ex span").text(setB.show().toString());
-	$("#im span").text(setB.show().toString());
-	$("#un span").text(setB.show().toString());
-	$("#in span").text(setB.show().toString());
-	$("#rl span").text(setB.show().toString());
+
+	
+	$("#eq span").text(true);
+	$("#ss span").text(setB.subset(setA).toString());
+	$("#em span").text(true);
+	$("#cm span").text(setB.compliment(setA).toString());
+	$("#uni span").text(false);
+	$("#ex span").text(true);
+	$("#im span").text(false);
+	$("#un span").text(setA.union(setB).toString());
+	$("#in span").text(setB.intersect(setA).toString());
+	$("#rl span").text("indirect");
 
 	return false;
 });

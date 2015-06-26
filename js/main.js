@@ -27,15 +27,15 @@ $("input[type=submit]").click(function() {
 	$("#setBd span").text(setB.show().toString());
 
 	
-	$("#eq span").text(true);
+	$("#eq span").text(setA.equals(setB).toString());
 	$("#ss span").text(setA.subset(setB).toString());
 	$("#em span").text(true);
-	$("#cm span").text(setB.compliment(setA).toString());
+	$("#cm span").text(setA.compliment(setB).toString());
 	$("#uni span").text(false);
 	$("#ex span").text(true);
 	$("#im span").text(false);
 	$("#un span").text(setA.union(setB).toString());
-	$("#in span").text(setB.intersect(setA).toString());
+	$("#in span").text(setA.intersect(setB).toString());
 	$("#rl span").text("indirect");
 
 	return false;

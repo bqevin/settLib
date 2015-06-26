@@ -42,10 +42,10 @@ Set.prototype.union = function (set) {
 
 		tempSet.add(set.setStore[i]);
 	}
-	return tempSet.show();
+	return tempSet.show().sort();
 }
 
-Set.prototype.intersect = function (set) {
+Set.prototype.compliment = function (set) {
 	var tempSet = new Set();
 	for(var i=0; i<this.setStore.length; ++i) {
 		tempSet.add(this.setStore[i]);
@@ -58,17 +58,17 @@ Set.prototype.intersect = function (set) {
 	return tempSet.show();
 }
 
-Set.prototype.compliment = function (set) {
-	var tempSet = new Set();
-	for(var i=0; i < this.setStore.length; ++i) {
-		tempSet.add(this.setStore[i]);
-	}
-	for(var i=0; i<set.setStore.length; ++i){
-		if(tempSet.contains(set.setStore[i])){
-			tempSet.setStore.unshift(set.setStore[i]);
-		}
-	}
-	return tempSet.show();
+Set.prototype.intersect = function (set) {
+  var temp = [];
+    for(var i = 0; i < this.setStore.length; i++){
+        for(var k = 0; k < set.setStore.length; k++){
+            if(this.setStore[i] == set.setStore[k]){
+                temp.push(this.setStore[i]);
+                break;
+            }
+        }
+    }
+    return temp;
 }
 
 Set.prototype.subset = function (set) {
@@ -120,3 +120,11 @@ Set.prototype.equals = function (set) {
     }       
     return true;
 }   
+
+
+// var aset = new Set();
+// aset.setStore = [23,2,3,1,23,2];
+// var bset = new Set();
+// bset.setStore = [23,2,3,1];
+
+// console.log(aset.compliment(bset));
